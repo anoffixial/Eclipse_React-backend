@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd"> <!-- bean definitions here -->
+
+
+
+	<bean id="emp" class="microsoft.spring.Employee">
+		<property name="id" value="01"></property>
+		<property name="name" value="Amartya"></property>
+		<property name="dept" value="Development"></property>
+	</bean>
+
+	<bean id="student" class="microsoft.spring.Student">
+		<property name="roll" value="101"></property>
+		<property name="name" value="Student"></property>
+		<property name="std" value="5"></property>
+		<property name="city" value="Pune"></property>
+		<property name="perc" value="79.9f"></property>
+	</bean>
+
+	<bean id="product" class="microsoft.spring.Product">
+		<property name="price" value="35"></property>
+		<property name="id" value="01"></property>
+		<property name="name" value="Biscuit"></property>
+		<!-- <constructor-arg value="1"></constructor-arg> <constructor-arg value="Biscuit"></constructor-arg> -->
+	</bean>
+
+	<bean id="cat" class="microsoft.spring.Category">
+		<!--<constructor-arg value="101"></constructor-arg> <constructor-arg value="Food"></constructor-arg> 
+			<constructor-arg><ref bean="product"/></constructor-arg> -->
+		<property name="cid" value="101"></property>
+		<property name="cname" value="Food"></property>
+		<property name="product">
+			<ref bean="product"></ref>
+		</property>
+	</bean>
+
+</beans>
